@@ -1,12 +1,15 @@
 import React from "react";
 import PagesRouter from "./router/PagesRouter";
 import BaseContainer from "./containers/BaseContainer";
+import AuthProvider from "./api/providers/AuthProvider";
 
 function App() {
    return (
-      <BaseContainer>
-         <PagesRouter />
-      </BaseContainer>
+      <AuthProvider>
+         <BaseContainer>
+            <PagesRouter />
+         </BaseContainer>
+      </AuthProvider>
    );
 }
 

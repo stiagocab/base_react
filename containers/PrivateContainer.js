@@ -1,9 +1,10 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useContext} from "react";
 import {useNavigate, useLocation} from "@reach/router";
+import {AuthContext} from "../api/providers/AuthProvider";
 
 // check login status on private routes
 export default function PrivateContainer({children}) {
-   const isLogin = false;
+   const {isLogin} = useContext(AuthContext);
    let navigate = useNavigate();
    let location = useLocation();
 
